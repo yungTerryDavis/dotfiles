@@ -1,0 +1,131 @@
+// -*- mode: jsonc -*-
+{
+    // https://github.com/Alexays/Waybar/wiki/Configuration
+    "layer": "bottom",
+    "position": "top",
+    "spacing": 4,
+    "font": "JetBrainsMono Nerd Font 14",
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/window"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "mpd",
+        "pulseaudio",
+        "network",
+        // "keyboard-state",
+        "hyprland/language",
+        "battery",
+        "power-profiles-daemon",
+        "tray"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+        "active-only": false,
+        "on-click": "hyprctl dispatch workspace {id}"
+    },
+    "hyprland/window": {},
+    "mpd": {
+        "server": "/home/ngumbk/.local/share/mpd/socket",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "on-click": "rmpc togglepause",
+        "on-click-right": "rmpc next",
+        "on-scroll-up": "rmpc volume +5",
+        "on-scroll-down": "rmpc volume -5",
+        // "on-click-middle": "rmpc",
+       	"consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        }
+    },
+    "pulseaudio": {  // icons
+        "scroll-step": 5,
+        "format": "{volume}% {icon} {format_source}",
+        "format-muted": "󰝟 {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": " ",  // Q01, wired headphones
+            "headset": " ",  // WH-XB910N
+            "default": ["", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+    "network": {  // icons
+        "format-wifi": "({signalStrength}%) ",  // make icons for different signalStrengths
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{essid} {ifname}: {ipaddr}/{cidr}"
+    },
+    "keyboard-state": {  // include user into group (check github)
+        "capslock": true,
+        "format": {
+            "capslock": "{icon}"
+        },
+        "format-icons": {  // find Aa icons
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/language": {  // fix icon
+        "format": " {}",
+        "format-en": "US",
+        "format-ru": "RU"
+    },
+    "battery": {  // icons and css
+        "states": {
+            // 100-95 - make green
+            // "good": 95,  // make white
+            "warning": 30,  // make yellow
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon} ",  // find icons
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "power-profiles-daemon": {  // unfunctional lol
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%d-%m-%Y (%V)}"
+    }
+}
