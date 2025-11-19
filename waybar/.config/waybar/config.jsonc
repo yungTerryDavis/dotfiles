@@ -19,7 +19,6 @@
         // "keyboard-state",
         "hyprland/language",
         "battery",
-        "power-profiles-daemon",
         "tray"
     ],
     // Modules configuration
@@ -28,11 +27,17 @@
         "on-click": "hyprctl dispatch workspace {id}"
     },
     "hyprland/window": {},
+
+    "clock": {
+        "format": "{:%H:%M | %b %d (%V)}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+
     "mpd": {
         "server": "/home/ngumbk/.local/share/mpd/socket",
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
         "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "format-stopped": "Stopped ",
         "unknown-tag": "N/A",
         "interval": 5,
         "on-click": "rmpc togglepause",
@@ -60,22 +65,19 @@
     },
     "pulseaudio": {  // icons
         "scroll-step": 5,
-        "format": "{volume}% {icon} {format_source}",
+        "format": "{volume}% {icon}",
         "format-muted": "󰝟 {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": " ",  // Q01, wired headphones
-            "headset": " ",  // WH-XB910N
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
     },
     "network": {  // icons
         "format-wifi": "({signalStrength}%) ",  // make icons for different signalStrengths
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{essid} {ifname}: {ipaddr}/{cidr}"
     },
@@ -110,22 +112,7 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-    "power-profiles-daemon": {  // unfunctional lol
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
     "tray": {
         "spacing": 10
-    },
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%d-%m-%Y (%V)}"
     }
 }
