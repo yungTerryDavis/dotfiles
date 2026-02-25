@@ -1,0 +1,16 @@
+# use lyrebird for webtunnel bridges
+
+[bridges]
+enabled = "auto"
+bridges = [
+    "obfs4 bridge 1",
+    "obfs4 bridge 2",
+    "obfs4 bridge 3",
+    "obfs4 bridge 4",
+]
+
+[[bridges.transports]]
+protocols = ["obfs4"]
+path = "/usr/bin/obfs4proxy"
+arguments = []
+run_on_startup = true
