@@ -30,35 +30,22 @@
     "hyprland/window": {},
 
     "clock": {
-        "format": "{:%H:%M | %b %d (%V)}",
+        "format": "{:%H:%M | %a, %d %b (%V)}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
 
     "mpd": {
         "server": "/home/ngumbk/.local/share/mpd/socket",
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
+        "format": "{stateIcon}({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
         "format-disconnected": "Disconnected ",
         "format-stopped": "Stopped ",
+        "tooltip-format": "Vol: {volume}%\nTrack: {artist} - {title}\nAlbum: {album}\nPos: (({songPosition}/{queueLength}))",
         "unknown-tag": "N/A",
         "interval": 5,
         "on-click": "rmpc togglepause",
         "on-click-right": "rmpc next",
         "on-scroll-up": "rmpc volume +5",
         "on-scroll-down": "rmpc volume -5",
-        // "on-click-middle": "rmpc",
-       	"consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
         "state-icons": {
             "paused": "",
             "playing": ""
@@ -66,10 +53,11 @@
     },
     "pulseaudio": {  // icons
         "scroll-step": 5,
-        "format": "{volume}% {icon}",
-        "format-muted": "󰝟 {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
+        "format": "{icon}   {volume}%",
+        "tooltip-format": "Vol: {volume}%\nMicro: {format_source}",
+        "format-muted": "󰝟 Mute all chat √",
+        "format-bluetooth": "{icon}   {volume}%",
+        "format-bluetooth-muted": "󰝟  Mute all chat √",
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
@@ -85,9 +73,10 @@
         "format-connected": "BT Conn"  // Service up, connected
     },
     "network": {  // icons
-        "format-wifi": "({signalStrength}%) ",  // make icons for different signalStrengths
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{essid} {ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{icon}",
+        "format-disconnected": "Disconnected ⚠",  // add icon for disconnected
+        "format-alt": "{essid} ({signalStrength}%) {ifname}: {ipaddr}/{cidr}",
+        "format-icons": [""]  // add icons
     },
     "keyboard-state": {  // include user into group (check github)
         "capslock": true,
