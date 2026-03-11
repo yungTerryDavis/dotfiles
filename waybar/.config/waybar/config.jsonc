@@ -15,6 +15,7 @@
     "modules-right": [
         "mpd",
         "pulseaudio",
+        "bluetooth",
         "network",
         // "keyboard-state",
         "hyprland/language",
@@ -75,6 +76,13 @@
             "default": ["", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "bluetooth": {
+        "format-no-controller": "BT down",  // Service down
+        "format-disabled": "BT disabled",
+        "format-off": " BT Off",  //
+        "format-on": "BT On",  // Service up, disconnected
+        "format-connected": "BT Conn"  // Service up, connected
     },
     "network": {  // icons
         "format-wifi": "({signalStrength}%) ",  // make icons for different signalStrengths
