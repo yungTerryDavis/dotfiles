@@ -4,7 +4,6 @@
     "layer": "bottom",
     "position": "top",
     "spacing": 4,
-    "font": "JetBrainsMono Nerd Font 14",
     "modules-left": [
         "hyprland/workspaces",
         "hyprland/window"
