@@ -28,12 +28,10 @@
         "on-click": "hyprctl dispatch workspace {id}"
     },
     "hyprland/window": {},
-
     "clock": {
         "format": "{:%H:%M | %a, %d %b (%V)}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
-
     "mpd": {
         "server": "/home/ngumbk/.local/share/mpd/socket",
         "format": "{stateIcon}({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
@@ -51,9 +49,9 @@
             "playing": ""
         }
     },
-    "pulseaudio": {  // icons
+    "pulseaudio": { // icons
         "scroll-step": 5,
-        "format": "{icon}   {volume}%",
+        "format": "{icon}  {volume}%",
         "tooltip-format": "Vol: {volume}%\nMicro: {format_source}",
         "format-muted": "󰝟 Mute all chat √",
         "format-bluetooth": "{icon}   {volume}%",
@@ -61,53 +59,64 @@
         "format-source": "",
         "format-source-muted": "",
         "format-icons": {
-            "default": ["", ""]
+            "default": [
+                "",
+                ""
+            ]
         },
         "on-click": "pavucontrol"
     },
     "bluetooth": {
-        "format-no-controller": "BT down",  // Service down
-        "format-disabled": "BT disabled",
-        "format-off": " BT Off",  //
-        "format-on": "BT On",  // Service up, disconnected
-        "format-connected": "BT Conn"  // Service up, connected
+        "format-no-controller": " down", // Service down
+        "format-disabled": " disabled",
+        "format-off": "  Off", //
+        "format-on": " On", // Service up, disconnected
+        "format-connected": " Conn" // Service up, connected
     },
-    "network": {  // icons
+    "network": { // icons
         "format-wifi": "{icon}",
-        "format-disconnected": "Disconnected ⚠",  // add icon for disconnected
+        "format-disconnected": "Disconnected ⚠", // add icon for disconnected
         "format-alt": "{essid} ({signalStrength}%) {ifname}: {ipaddr}/{cidr}",
-        "format-icons": [""]  // add icons
+        "format-icons": [
+            ""
+        ] // add icons
     },
-    "keyboard-state": {  // include user into group (check github)
+    "keyboard-state": { // include user into group (check github)
         "capslock": true,
         "format": {
             "capslock": "{icon}"
         },
-        "format-icons": {  // find Aa icons
+        "format-icons": { // find Aa icons
             "locked": "",
             "unlocked": ""
         }
     },
-    "hyprland/language": {  // fix icon
+    "hyprland/language": {
         "format": " {}",
         "format-en": "US",
         "format-ru": "RU"
     },
-    "battery": {  // icons and css
+    "battery": { // icons and css
         "states": {
             // 100-95 - make green
             // "good": 95,  // make white
-            "warning": 30,  // make yellow
+            "warning": 30, // make yellow
             "critical": 15
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon} ",  // find icons
+        "format-charging": "{capacity}% {icon} ", // find icons
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
     },
     "tray": {
         "spacing": 10
