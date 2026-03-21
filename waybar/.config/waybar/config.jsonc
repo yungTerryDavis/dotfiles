@@ -16,7 +16,6 @@
         "pulseaudio",
         "bluetooth",
         "network",
-        // "keyboard-state",
         "hyprland/language",
         "battery",
         "tray"
@@ -79,16 +78,6 @@
         "format-icons": [
             ""
         ] // add icons
-    },
-    "keyboard-state": { // include user into group (check github)
-        "capslock": true,
-        "format": {
-            "capslock": "{icon}"
-        },
-        "format-icons": { // find Aa icons
-            "locked": "",
-            "unlocked": ""
-        }
     },
     "hyprland/language": {
         "format": " {}",
