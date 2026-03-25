@@ -1,0 +1,9 @@
+[Unit]
+Description=Change wallpaper using AWWW
+After=awww.service
+
+[Service]
+ExecStart=/bin/bash /home/ngumbk/.config/awww/awww.sh
+
+[Install]
+WantedBy=default.target

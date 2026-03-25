@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# start swww
+# start awww
 WALLPAPERS_DIR=~/Pictures/Wallpapers/2k
 WALLPAPER=$(find $"WALLPAPERS_DIR" -type f | shuf -n 1)
-swww img "$WALLPAPER"
+awww img "$WALLPAPER"
