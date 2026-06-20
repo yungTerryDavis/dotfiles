@@ -326,3 +326,17 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+
+#custom-launcher {
+    /* Set the path to your PNG file */
+    background-image: url('basil_huge.png');
+    
+    /* Ensure the image is positioned and sized correctly */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; /* or specify a size like 20px */
+    
+    /* Add padding/margin as needed for spacing */
+    padding: 0 10px; 
+    font-size: 20px; /* Adjust font size to control the module's height */
+}
