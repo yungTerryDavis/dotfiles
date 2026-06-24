@@ -5,7 +5,7 @@
     "position": "top",
     "spacing": 4,
     "modules-left": [
-        "hyprland/workspaces",
+        "ext/workspaces",
         "hyprland/window"
     ],
     "modules-center": [
@@ -23,9 +23,10 @@
         "tray"
     ],
     // Modules configuration
-    "hyprland/workspaces": {
+    "ext/workspaces": {
         "active-only": false,
-        "on-click": "hyprctl dispatch workspace {id}"
+        "on-click": "activate"
+        // "on-click": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"id\" })'"
     },
     "hyprland/window": {},
     "clock": {
