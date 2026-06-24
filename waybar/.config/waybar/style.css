@@ -327,6 +327,10 @@ label:focus {
     background-color: #0069d4;
 }
 
+#bluetooth {
+    background-color: #0069d4;
+}
+
 #custom-launcher {
     /* Set the path to your PNG file */
     background-image: url('basil_huge.png');
