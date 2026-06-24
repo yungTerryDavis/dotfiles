@@ -340,3 +340,15 @@ label:focus {
     padding: 0 10px; 
     font-size: 20px; /* Adjust font size to control the module's height */
 }
+
+#custom-vpn {
+    color: black;
+}
+
+#custom-vpn.up {
+    background-color: silver;
+}
+
+#custom-vpn.down {
+    background-color: pink;
+}

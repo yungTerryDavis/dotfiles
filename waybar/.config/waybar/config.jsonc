@@ -17,6 +17,7 @@
         "pulseaudio",
         "bluetooth",
         "network",
+        "custom/vpn",
         "hyprland/language",
         "battery",
         "tray"
@@ -84,6 +85,13 @@
         "format-icons": [
             ""
         ] // add icons
+    },
+    "custom/vpn": {
+        "format": "{icon} {text}",
+        "exec": "$HOME/.config/waybar/scripts/waybar-vpn.sh listen",
+        "on-click": "$HOME/.config/waybar/scripts/waybar-vpn.sh toggle",
+        "restart-interval": 5,
+        "return-type": "json"
     },
     "hyprland/language": {
         "format": " {}",
