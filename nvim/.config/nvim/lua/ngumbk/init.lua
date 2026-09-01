@@ -1,0 +1,5 @@
+require("ngumbk.remap")
+require("ngumbk.lazy")
+require("ngumbk.options")
+require("ngumbk.autocmds")
+require("ngumbk.guide")
